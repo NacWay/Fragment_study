@@ -21,12 +21,15 @@
         android:label="fragment_b"
         android:name="com.study.fragment_study.part1.Fragment_B"
         tools:layout="@layout/fragment__b">
+
         <action
             android:id="@+id/action_fragmentB_to_fragmentC"
-            app:destination="@id/fragmentC" />
+            app:destination="@id/fragmentC"/>
         <action
             android:id="@+id/action_fragmentB_to_fragmentA"
             app:destination="@id/fragmentA" />
+
+
     </fragment>
 
     <fragment
@@ -34,12 +37,20 @@
         android:label="fragment_c"
         android:name="com.study.fragment_study.part1.Fragment_C"
         tools:layout="@layout/fragment__c">
+
         <action
             android:id="@+id/action_fragmentC_to_fragmentD"
             app:destination="@id/fragmentD" />
+
         <action
             android:id="@+id/action_fragmentC_to_fragmentB"
             app:destination="@id/fragmentB" />
+        <argument
+            android:name="texttext"
+            app:argType="string"
+            android:defaultValue="text" />
+
+
     </fragment>
 
     <fragment

@@ -10,9 +10,13 @@ import android.widget.TextView
 import androidx.core.os.bundleOf
 import androidx.fragment.app.FragmentManager
 import androidx.navigation.Navigation
+import androidx.navigation.fragment.FragmentNavigator
+import androidx.navigation.fragment.navArgs
 import com.study.fragment_study.R
 
 class Fragment_C : Fragment() {
+
+    val args : Fragment_CArgs by navArgs()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -26,14 +30,14 @@ class Fragment_C : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-            val text : TextView = view.findViewById(R.id.textFromB)
-            text.setText(requireArguments().getString("text"))
-
+            val text1 : TextView = view.findViewById(R.id.textFromB)
+            text1.setText(args.texttext)
 
 
 
         val back: Button = view.findViewById(R.id.backBtn)
         val goToFragmentD: Button = view.findViewById(R.id.toFragmentD)
+
 
         goToFragmentD.setOnClickListener {
             Navigation.findNavController(view).navigate(R.id.action_fragmentC_to_fragmentD)
