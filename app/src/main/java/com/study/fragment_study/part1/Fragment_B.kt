@@ -9,14 +9,11 @@ import android.widget.Button
 import android.widget.TextView
 import androidx.core.os.bundleOf
 import androidx.fragment.app.Fragment
+import androidx.navigation.Navigation
 import com.study.fragment_study.R
 
 
 class Fragment_B : Fragment() {
-
-
-
-
 
 
     override fun onCreateView(
@@ -33,27 +30,15 @@ class Fragment_B : Fragment() {
         val goToFrCbtn: Button = view.findViewById(R.id.toFragmentC)
         val back: Button = view.findViewById(R.id.backBtn)
 
-        val fragmentA = Fragment_A()
-        val fragmentC = Fragment_C()
-
 
         goToFrCbtn.setOnClickListener {
-            val result = "Text from fragment B"
-            parentFragmentManager.setFragmentResult("requestKey", bundleOf("bundleKey" to result))
-
-            parentFragmentManager.beginTransaction().apply {
-                replace(R.id.fragmentContainer, fragmentC)
-                addToBackStack(null)
-                commit()
-            }
+            val bundle = bundleOf("text" to "Text from fragment B")
+            Navigation.findNavController(view).navigate(R.id.action_fragmentB_to_fragmentC, bundle)
         }
 
-
         back.setOnClickListener {
-            parentFragmentManager.beginTransaction().apply {
-                replace(R.id.fragmentContainer, fragmentA)
-                commit()
-            }
-            }
+            Navigation.findNavController(view).navigate(R.id.action_fragmentB_to_fragmentA)
+        }
+
         }
     }

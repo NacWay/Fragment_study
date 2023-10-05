@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/fragmentA">
+
+
+    <fragment
+        android:id="@+id/fragmentA"
+        android:label="fragment_a"
+        android:name="com.study.fragment_study.part1.Fragment_A"
+        tools:layout="@layout/fragment__a">
+        <action
+            android:id="@+id/action_fragmentA_to_fragmentB"
+            app:destination="@id/fragmentB" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/fragmentB"
+        android:label="fragment_b"
+        android:name="com.study.fragment_study.part1.Fragment_B"
+        tools:layout="@layout/fragment__b">
+        <action
+            android:id="@+id/action_fragmentB_to_fragmentC"
+            app:destination="@id/fragmentC" />
+        <action
+            android:id="@+id/action_fragmentB_to_fragmentA"
+            app:destination="@id/fragmentA" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/fragmentC"
+        android:label="fragment_c"
+        android:name="com.study.fragment_study.part1.Fragment_C"
+        tools:layout="@layout/fragment__c">
+        <action
+            android:id="@+id/action_fragmentC_to_fragmentD"
+            app:destination="@id/fragmentD" />
+        <action
+            android:id="@+id/action_fragmentC_to_fragmentB"
+            app:destination="@id/fragmentB" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/fragmentD"
+        android:label="fragment_d"
+        android:name="com.study.fragment_study.part1.Fragment_D"
+        tools:layout="@layout/fragment__d">
+        <action
+            android:id="@+id/action_fragmentD_to_fragmentA"
+            app:destination="@id/fragmentA" />
+    </fragment>
+
+
+</navigation>

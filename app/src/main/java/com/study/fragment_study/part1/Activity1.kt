@@ -1,11 +1,9 @@
 package com.study.fragment_study.part1
 
-import android.opengl.Visibility
+
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.view.View
 import android.widget.Button
-import androidx.fragment.app.FragmentActivity
 import com.study.fragment_study.R
 
 class Activity1 : AppCompatActivity() {
@@ -17,7 +15,6 @@ class Activity1 : AppCompatActivity() {
         val fragmentA = Fragment_A()
 
         goFrABtn.setOnClickListener {
-           // goFrABtn.setVisibility(View.INVISIBLE)
 
             supportFragmentManager.beginTransaction().apply {
                 replace(R.id.fragmentContainer, fragmentA)
@@ -25,5 +22,7 @@ class Activity1 : AppCompatActivity() {
                 commit()
             }
         }
-    }
+
+   }
+
 }

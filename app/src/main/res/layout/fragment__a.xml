@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/white"
+    android:id="@+id/fragmentA"
     tools:context=".part1.Fragment_A">
 
 
@@ -26,5 +27,7 @@
         app:layout_constraintEnd_toEndOf="@+id/textView"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/textView" />
+
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
