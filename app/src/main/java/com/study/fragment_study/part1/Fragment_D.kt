@@ -6,10 +6,10 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import androidx.fragment.app.Fragment
+import androidx.navigation.Navigation
 import com.study.fragment_study.R
 
 class Fragment_D : Fragment() {
-
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -23,18 +23,10 @@ class Fragment_D : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         val goToFrA: Button = view.findViewById(R.id.toFragmentA)
-        val fragment_A = Fragment_A()
 
         goToFrA.setOnClickListener {
-            parentFragmentManager.beginTransaction().apply {
-                var count: Int = parentFragmentManager.getBackStackEntryCount()
-                while (count > 0) {
-                    parentFragmentManager.popBackStack()
-                    count--
-                }
-                replace(R.id.fragmentContainer, fragment_A)
-                commit()
-            }
+            Navigation.findNavController(view).navigate(R.id.action_fragmentD_to_fragmentA)
         }
+
     }
 }
