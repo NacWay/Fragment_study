@@ -6,7 +6,6 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import androidx.fragment.app.Fragment
-import androidx.navigation.Navigation
 import com.study.fragment_study.R
 
 class Fragment_D : Fragment() {
@@ -25,7 +24,7 @@ class Fragment_D : Fragment() {
         val goToFrA: Button = view.findViewById(R.id.toFragmentA)
 
         goToFrA.setOnClickListener {
-            Navigation.findNavController(view).navigate(R.id.action_fragmentD_to_fragmentA)
+
         }
 
     }

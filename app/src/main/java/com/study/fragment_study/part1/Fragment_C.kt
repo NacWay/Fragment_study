@@ -7,16 +7,11 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import android.widget.TextView
-import androidx.core.os.bundleOf
-import androidx.fragment.app.FragmentManager
-import androidx.navigation.Navigation
-import androidx.navigation.fragment.FragmentNavigator
-import androidx.navigation.fragment.navArgs
 import com.study.fragment_study.R
 
 class Fragment_C : Fragment() {
 
-    val args : Fragment_CArgs by navArgs()
+
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -31,7 +26,7 @@ class Fragment_C : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
             val text1 : TextView = view.findViewById(R.id.textFromB)
-            text1.setText(args.texttext)
+            text1.setText("")
 
 
 
@@ -40,11 +35,11 @@ class Fragment_C : Fragment() {
 
 
         goToFragmentD.setOnClickListener {
-            Navigation.findNavController(view).navigate(R.id.action_fragmentC_to_fragmentD)
+
         }
 
         back.setOnClickListener {
-            Navigation.findNavController(view).navigate(R.id.action_fragmentC_to_fragmentB)
+
         }
     }
 }

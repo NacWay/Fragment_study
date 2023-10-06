@@ -7,13 +7,13 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import androidx.fragment.app.Fragment
-import androidx.navigation.Navigation
-import androidx.navigation.fragment.NavHostFragment
-import androidx.navigation.fragment.findNavController
+import com.github.terrakok.cicerone.Router
+import com.github.terrakok.cicerone.androidx.AppNavigator
 import com.study.fragment_study.R
 
 
 class Fragment_A : Fragment() {
+
 
 
     override fun onCreateView(
@@ -22,7 +22,6 @@ class Fragment_A : Fragment() {
     ): View? {
         // Inflate the layout for this fragment
         return inflater.inflate(com.study.fragment_study.R.layout.fragment__a, container, false)
-
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -32,7 +31,11 @@ class Fragment_A : Fragment() {
         val goToFragmentB: Button = view.findViewById(com.study.fragment_study.R.id.toFragmentB)
 
        goToFragmentB.setOnClickListener {
-           Navigation.findNavController(view).navigate(R.id.action_fragmentA_to_fragmentB)
+
        }
+
+
+
     }
+
 }
